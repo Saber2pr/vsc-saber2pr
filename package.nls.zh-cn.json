@@ -1,0 +1,4 @@
+{
+  "saber2pr.menu": "[打开Git仓库](command:saber2pr.open.repo)\n[打开终端](command:saber2pr.open.terminal)\n[脚本管理](command:vsc-scripts-manager.main)\n[Todo管理](command:todolist.main)\n[更改主题](command:saber2pr.change.theme)\n[更改语言](command:saber2pr.change.locale)\n[重启](command:saber2pr.reload)",
+  "saber2pr.error.need.http": "The protocol must be HTTP"
+}

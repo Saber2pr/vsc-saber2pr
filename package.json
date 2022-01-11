@@ -1,0 +1,75 @@
+{
+	"name": "vsc-saber2pr",
+	"displayName": "Saber2pr Tools",
+	"description": "saber2pr utils tools.",
+	"publisher": "saber2pr",
+	"version": "0.0.0",
+	"engines": {
+		"vscode": "^1.56.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Saber2pr/saber2pr.git"
+	},
+	"icon": "assets/logo.png",
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "saber2pr.open.repo",
+				"title": "test"
+			}
+		],
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "welcome",
+					"title": "Saber2pr",
+					"icon": "assets/logo.png"
+				}
+			]
+		},
+		"views": {
+			"welcome": [
+				{
+					"id": "saber2pr",
+					"name": "tools"
+				}
+			]
+		},
+		"viewsWelcome": [
+			{
+				"view": "saber2pr",
+				"contents": "%saber2pr.menu%"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "yarn run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"build": "vsce package",
+		"release": "standard-version"
+	},
+	"devDependencies": {
+		"@types/git-url-parse": "^9.0.1",
+		"@types/node": "^12.11.7",
+		"@types/vscode": "^1.56.0",
+		"standard-version": "^9.3.2",
+		"typescript": "^4.1.3"
+	},
+	"dependencies": {
+		"git-url-parse": "^11.6.0",
+		"vscode-nls-i18n": "^0.2.4"
+	},
+	"extensionDependencies": [
+		"saber2pr.todolist",
+		"saber2pr.scripts-manager"
+	]
+}
