@@ -6,6 +6,7 @@ import {
   COM_CHANGE_LOCALE,
   COM_OPEN_TERMINAL,
   COM_RELOAD,
+  COM_OPEN_VSC_MARKETPLACE,
 } from './constants'
 import { init } from 'vscode-nls-i18n'
 import * as vscode from 'vscode'
@@ -31,6 +32,9 @@ export function activate(context: vscode.ExtensionContext) {
     }),
     vscode.commands.registerCommand(COM_RELOAD, () => {
       vscode.commands.executeCommand(COMMANDS.reload)
+    }),
+    vscode.commands.registerCommand(COM_OPEN_VSC_MARKETPLACE, () => {
+      openUrl('https://marketplace.visualstudio.com/manage/')
     })
   )
 }
