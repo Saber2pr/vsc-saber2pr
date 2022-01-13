@@ -39,7 +39,15 @@
 			"welcome": [
 				{
 					"id": "saber2pr",
-					"name": "tools"
+					"name": "%saber2pr.title%"
+				},
+				{
+					"id": "extensions",
+					"name": "%saber2pr.title.extensions%"
+				},
+				{
+					"id": "system",
+					"name": "%saber2pr.title.system%"
 				}
 			]
 		},
@@ -47,6 +55,14 @@
 			{
 				"view": "saber2pr",
 				"contents": "%saber2pr.menu%"
+			},
+			{
+				"view": "extensions",
+				"contents": "%saber2pr.menu.extensions%"
+			},
+			{
+				"view": "system",
+				"contents": "%saber2pr.menu.system%"
 			}
 		]
 	},
