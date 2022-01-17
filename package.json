@@ -87,5 +87,20 @@
 	"extensionDependencies": [
 		"saber2pr.todolist",
 		"saber2pr.scripts-manager"
+	],
+	"extensionPack": [
+		"saber2pr.todolist",
+		"saber2pr.scripts-manager",
+		"saber2pr.import-transform",
+		"saber2pr.ts-ast-viewer",
+		"saber2pr.createdirindex",
+		"ms-ceintl.vscode-language-pack-zh-hans",
+		"mhutchie.git-graph",
+		"humao.rest-client",
+		"hediet.vscode-drawio",
+		"jebbs.plantuml",
+		"gruntfuggly.todo-tree",
+		"connor.translatex",
+		"mikey.vscode-fileheader"
 	]
 }
