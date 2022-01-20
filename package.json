@@ -22,10 +22,18 @@
 	"contributes": {
 		"commands": [
 			{
-				"command": "saber2pr.open.repo",
-				"title": "test"
+				"command": "saber2pr.open.file.window",
+				"title": "%saber2pr.title.open.file.window%"
 			}
 		],
+		"menus": {
+			"explorer/context": [
+				{
+					"command": "saber2pr.open.file.window",
+					"group": "1_modification"
+				}
+			]
+		},
 		"viewsContainers": {
 			"activitybar": [
 				{
