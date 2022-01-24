@@ -94,7 +94,8 @@
 	},
 	"extensionDependencies": [
 		"saber2pr.todolist",
-		"saber2pr.scripts-manager"
+		"saber2pr.scripts-manager",
+		"piotrpalarz.vscode-gitignore-generator"
 	],
 	"extensionPack": [
 		"saber2pr.todolist",
@@ -109,6 +110,7 @@
 		"jebbs.plantuml",
 		"gruntfuggly.todo-tree",
 		"connor.translatex",
-		"mikey.vscode-fileheader"
+		"mikey.vscode-fileheader",
+		"piotrpalarz.vscode-gitignore-generator"
 	]
 }
