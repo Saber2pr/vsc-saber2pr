@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/Saber2pr/saber2pr/compare/v0.0.5...v0.0.6) (2022-01-24)
+
+
+### Features
+
+* add json2dts ([83b8277](https://github.com/Saber2pr/saber2pr/commit/83b82773a11c945adad041c747c32bdc1fbe513d))
+
 ### [0.0.5](https://github.com/Saber2pr/saber2pr/compare/v0.0.4...v0.0.5) (2022-01-20)
 
 
