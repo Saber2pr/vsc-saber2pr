@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.7](https://github.com/Saber2pr/saber2pr/compare/v0.0.6...v0.0.7) (2022-01-24)
+
+
+### Features
+
+* add blog ([05f9c22](https://github.com/Saber2pr/saber2pr/commit/05f9c22d703cd554fc94c907e82dafd433eeff1f))
+
 ### [0.0.6](https://github.com/Saber2pr/saber2pr/compare/v0.0.5...v0.0.6) (2022-01-24)
 
 
