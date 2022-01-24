@@ -9,6 +9,7 @@ import {
   COM_RELOAD,
   COM_OPEN_VSC_MARKETPLACE,
   COM_OPEN_FILE_WINDOW,
+  COM_OPEN_URL_JSON2DTS,
 } from './constants'
 import { init } from 'vscode-nls-i18n'
 import * as vscode from 'vscode'
@@ -37,6 +38,10 @@ export function activate(context: vscode.ExtensionContext) {
     }),
     vscode.commands.registerCommand(COM_OPEN_VSC_MARKETPLACE, () => {
       openUrl('https://marketplace.visualstudio.com/manage/')
+    }),
+    // TODO webview 改造，扩展插件栏：动态渲染菜单
+    vscode.commands.registerCommand(COM_OPEN_URL_JSON2DTS, () => {
+      vscode.commands.executeCommand('simpleBrowser.show', 'https://saber2pr.top/json-type-app/')
     }),
     vscode.commands.registerCommand(COM_OPEN_FILE_WINDOW, (uri: vscode.Uri) => {
       execShell('code', ['-n', uri.fsPath])
