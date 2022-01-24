@@ -3,7 +3,7 @@
   "saber2pr.title.extensions": "扩展插件",
   "saber2pr.title.system": "系统",
   "saber2pr.menu": "[打开Git仓库](command:saber2pr.open.repo)\n[打开最近项目](command:workbench.action.quickOpenRecent)\n[打开终端](command:saber2pr.open.terminal)",
-  "saber2pr.menu.extensions": "[脚本管理](command:vsc-scripts-manager.main)\n[Todo管理](command:todolist.main)\n[博客笔记](command:saber2pr.open.url.saber2pr-blog)",
+  "saber2pr.menu.extensions": "[博客笔记](command:saber2pr.open.url.saber2pr-blog)\n[脚本管理](command:vsc-scripts-manager.main)\n[Todo管理](command:todolist.main)",
   "saber2pr.menu.system": "[更改主题](command:saber2pr.change.theme)\n[更改语言](command:saber2pr.change.locale)\n[重启](command:saber2pr.reload)\n[发布插件](command:saber2pr.open.vsc-marketplace)",
   "saber2pr.error.need.http": "协议必须为HTTP",
   "saber2pr.title.open.file.window": "在新窗口打开路径"
