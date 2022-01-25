@@ -1,4 +1,4 @@
-import { execShell } from './utils/execShell';
+import { execShell } from './utils/execShell'
 import { openUrl } from './utils/openUrl'
 import { getRemoteOrigin } from './utils/git'
 import {
@@ -40,7 +40,10 @@ export function activate(context: vscode.ExtensionContext) {
       openUrl('https://marketplace.visualstudio.com/manage/')
     }),
     vscode.commands.registerCommand(COM_OPEN_URL_BLOG, () => {
-      vscode.commands.executeCommand('simpleBrowser.show', 'https://saber2pr.top/#/blog/%E6%B0%B8%E6%81%92%E3%81%AE%E5%B9%BB%E6%83%B3%E4%B9%A1')
+      vscode.commands.executeCommand(
+        'simpleBrowser.show',
+        'https://saber2pr.top/?plain-menu-blog#/blog/%E6%B0%B8%E6%81%92%E3%81%AE%E5%B9%BB%E6%83%B3%E4%B9%A1'
+      )
     }),
     vscode.commands.registerCommand(COM_OPEN_FILE_WINDOW, (uri: vscode.Uri) => {
       execShell('code', ['-n', uri.fsPath])
