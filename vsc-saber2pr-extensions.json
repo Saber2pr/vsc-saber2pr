@@ -1,0 +1,22 @@
+[
+  {
+    "zh-cn": "博客笔记",
+    "en": "My Blog",
+    "href": "https://saber2pr.top/?plain-menu-blog#/blog/%E6%B0%B8%E6%81%92%E3%81%AE%E5%B9%BB%E6%83%B3%E4%B9%A1"
+  },
+  {
+    "zh-cn": "脚本管理",
+    "en": "Script Manage",
+    "command": "vsc-scripts-manager.main"
+  },
+  {
+    "zh-cn": "Todo管理",
+    "en": "Todo Manage",
+    "command": "todolist.main"
+  },
+  {
+    "zh-cn": "JSON转DTs",
+    "en": "JSON To DTs",
+    "href": "https://saber2pr.top/json-type-app/"
+  },
+]

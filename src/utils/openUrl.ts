@@ -1,6 +1,4 @@
 import vscode from 'vscode'
 
-export const openUrl = (url: string) => vscode.env.openExternal(
-  vscode.Uri.parse(url)
-)
-
+export const openUrl = (url: string) =>
+  vscode.env.openExternal(vscode.Uri.parse(url))
