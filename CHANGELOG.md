@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.10](https://github.com/Saber2pr/saber2pr/compare/v0.0.9...v0.0.10) (2022-01-29)
+
+
+### Features
+
+* webview side menu ([474e812](https://github.com/Saber2pr/saber2pr/commit/474e812cb9d4c4b066c4845ef5d51d7544541a8d))
+
 ### [0.0.9](https://github.com/Saber2pr/saber2pr/compare/v0.0.8...v0.0.9) (2022-01-25)
 
 
