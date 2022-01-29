@@ -24,9 +24,9 @@ export const renderList = (list: List) => {
     item =>
       `<vscode-button style="width:100%;margin-top:13px;" onclick="vscode.postMessage({service: '${
         item.command ? 'command' : COM_OPEN_IFrame
-      }',params:'${item.href || item.command}'})">${
-        item[language]
-      }</vscode-button>`
+      }',params:'${
+        item.href ? `${item[language]}:${item.href}` : item.command
+      }'})">${item[language]}</vscode-button>`
   )
   return listHtml.join('')
 }

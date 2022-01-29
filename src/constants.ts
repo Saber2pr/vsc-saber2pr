@@ -6,6 +6,7 @@ export const COM_RELOAD = 'saber2pr.reload'
 export const COM_OPEN_VSC_MARKETPLACE = 'saber2pr.open.vsc-marketplace'
 export const COM_OPEN_FILE_WINDOW = 'saber2pr.open.file.window'
 export const COM_OPEN_IFrame = 'saber2pr.open.iframe'
+export const COM_UPDATE_URI_EXTENSION = 'saber2pr.update.uri.extension'
 
 // open url
 export const COM_OPEN_URL_BLOG = 'saber2pr.open.url.saber2pr-blog'
@@ -13,3 +14,5 @@ export const COM_OPEN_URL_BLOG = 'saber2pr.open.url.saber2pr-blog'
 // src
 export const listUri =
   'https://cdn.jsdelivr.net/gh/Saber2pr/saber2pr.github.io@master/static/data/vsc-saber2pr-extensions.json'
+export const refreshExtensionUri =
+  'https://purge.jsdelivr.net/gh/Saber2pr/saber2pr.github.io@master/static/data/vsc-saber2pr-extensions.json'

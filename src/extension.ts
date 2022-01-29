@@ -14,7 +14,9 @@ import {
   COM_OPEN_URL_BLOG,
   COM_OPEN_VSC_MARKETPLACE,
   COM_RELOAD,
+  COM_UPDATE_URI_EXTENSION,
   listUri,
+  refreshExtensionUri,
 } from './constants'
 import { handleMessage } from './handleMessage'
 import { COMMANDS } from './utils/commands'
@@ -24,6 +26,13 @@ import { openUrl } from './utils/openUrl'
 import { createListWebviewContent } from './webview/createListWebviewContent'
 import { createLoadingWebviewContent } from './webview/createLoadingWebviewContent'
 import { join } from 'path'
+import json from 'json5'
+
+axios.defaults.transformResponse = [
+  text => {
+    return json.parse(text)
+  },
+]
 
 let webviewPanel: vscode.WebviewPanel
 
@@ -32,7 +41,7 @@ export function activate(context: vscode.ExtensionContext) {
   init(context.extensionPath)
 
   // webview init
-  function activeIFrameWebview(src: string, reload = false) {
+  function activeIFrameWebview(title: string, src: string, reload = false) {
     src = appendParams(
       src,
       `theme=${
@@ -47,11 +56,12 @@ export function activate(context: vscode.ExtensionContext) {
           src
         )
       }
+      webviewPanel.title = title
       webviewPanel.reveal()
     } else {
       webviewPanel = vscode.window.createWebviewPanel(
         'iframe',
-        localize('saber2pr.title.extensions'),
+        title,
         vscode.ViewColumn.One,
         {
           enableScripts: true,
@@ -92,17 +102,14 @@ export function activate(context: vscode.ExtensionContext) {
           context.extensionUri
         )
         // render data
-        axios
-          .get(listUri, {
-            params: { t: Date.now() },
-          })
-          .then(res => {
-            webview.webview.html = createListWebviewContent(
-              webview.webview,
-              context.extensionUri,
-              res.data
-            )
-          })
+        axios.get(listUri).then(res => {
+          console.log('Extension Config', res.data)
+          webview.webview.html = createListWebviewContent(
+            webview.webview,
+            context.extensionUri,
+            res.data
+          )
+        })
 
         webview.webview.onDidReceiveMessage(
           handleMessage,
@@ -111,8 +118,11 @@ export function activate(context: vscode.ExtensionContext) {
         )
       },
     }),
-    vscode.commands.registerCommand(COM_OPEN_IFrame, async (src: string) => {
-      activeIFrameWebview(src, true)
+    vscode.commands.registerCommand(COM_OPEN_IFrame, async (data: string) => {
+      const index = data.indexOf(':')
+      const title = data.slice(0, index)
+      const src = data.slice(index + 1)
+      activeIFrameWebview(title, src, true)
     }),
     vscode.commands.registerCommand(COM_OPEN_REPO, async () => {
       const remote = await getRemoteOrigin()
@@ -141,6 +151,25 @@ export function activate(context: vscode.ExtensionContext) {
     }),
     vscode.commands.registerCommand(COM_OPEN_FILE_WINDOW, (uri: vscode.Uri) => {
       execShell('code', ['-n', uri.fsPath])
+    }),
+    vscode.commands.registerCommand(COM_UPDATE_URI_EXTENSION, async () => {
+      vscode.window.withProgress(
+        {
+          location: vscode.ProgressLocation.Notification,
+          title: 'Update Extension Config',
+        },
+        async progress => {
+          try {
+            progress.report({ increment: 0 })
+            const res = await axios.get(refreshExtensionUri)
+            console.log(res.data)
+            vscode.window.showInformationMessage('Update Success')
+            progress.report({ increment: 100 })
+          } catch (error) {
+            vscode.window.showErrorMessage('Update Fail')
+          }
+        }
+      )
     })
   )
 }
