@@ -22,7 +22,7 @@ export const renderList = (list: List) => {
   // TODO: event proxy
   const listHtml = list.map(
     item =>
-      `<vscode-button style="width:100%;margin-top:13px;" onclick="vscode.postMessage({service: '${
+      `<vscode-button style="width:100%;height:26px;margin-top:13px;" onclick="vscode.postMessage({service: '${
         item.command ? 'command' : COM_OPEN_IFrame
       }',params:'${
         item.href ? `${item[language]}:${item.href}` : item.command
