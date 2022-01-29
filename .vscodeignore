@@ -20,3 +20,8 @@ web/yarn.lock
 web/index.html
 web/tsconfig.json
 web/webpack.config.js
+
+node_modules/@microsoft
+
+node_modules/@vscode/webview-ui-toolkit
+!node_modules/@vscode/webview-ui-toolkit/dist/toolkit.js

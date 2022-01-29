@@ -97,7 +97,6 @@ export function activate(context: vscode.ExtensionContext) {
             params: { t: Date.now() },
           })
           .then(res => {
-            console.log(res)
             webview.webview.html = createListWebviewContent(
               webview.webview,
               context.extensionUri,
