@@ -102,7 +102,7 @@ export function activate(context: vscode.ExtensionContext) {
           context.extensionUri
         )
         // render data
-        axios.get(listUri).then(res => {
+        axios.get(`${listUri}?t=${Date.now()}`).then(res => {
           console.log('Extension Config', res.data)
           webview.webview.html = createListWebviewContent(
             webview.webview,

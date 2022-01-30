@@ -13,6 +13,6 @@ export const COM_OPEN_URL_BLOG = 'saber2pr.open.url.saber2pr-blog'
 
 // src
 export const listUri =
-  'https://cdn.jsdelivr.net/gh/Saber2pr/saber2pr.github.io@master/static/data/vsc-saber2pr-extensions.json'
+  'https://saber2pr.top/static/data/vsc-saber2pr-extensions.json'
 export const refreshExtensionUri =
   'https://purge.jsdelivr.net/gh/Saber2pr/saber2pr.github.io@master/static/data/vsc-saber2pr-extensions.json'
