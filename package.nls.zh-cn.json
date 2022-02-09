@@ -6,5 +6,7 @@
   "saber2pr.menu.extensions": "[博客笔记](command:saber2pr.open.url.saber2pr-blog)\n[脚本管理](command:vsc-scripts-manager.main)\n[Todo管理](command:todolist.main)",
   "saber2pr.menu.system": "[更改主题](command:saber2pr.change.theme)\n[更改语言](command:saber2pr.change.locale)\n[重启](command:saber2pr.reload)\n[刷新插件配置](command:saber2pr.update.uri.extension)\n[发布插件](command:saber2pr.open.vsc-marketplace)",
   "saber2pr.error.need.http": "协议必须为HTTP",
-  "saber2pr.title.open.file.window": "在新窗口打开路径"
+  "saber2pr.title.open.file.window": "在新窗口打开路径",
+  "saber2pr.git.push.placeholder": "请输入提交信息",
+  "saber2pr.git.push.title": "推送提交"
 }
