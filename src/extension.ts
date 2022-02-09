@@ -190,13 +190,13 @@ export function activate(context: vscode.ExtensionContext) {
         value: 'chore: update',
         prompt: localize('saber2pr.git.push.title'),
       })
-      await execShell('git', ['add', '.'])
+      await execShell('git', ['add', '.'], 'inherit')
       if (value) {
         if (/["']/.test(value)) {
           vscode.window.showErrorMessage('commit message not include "\' ')
           return
         }
-        await execShell('git', ['commit', '.', '-m', `"${value}"`])
+        await execShell('git', ['commit', '.', '-m', `"${value}"`], 'inherit')
         vscode.commands.executeCommand('git.push')
       }
     })
