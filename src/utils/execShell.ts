@@ -1,28 +1,14 @@
-import { spawn } from 'child_process';
+import { spawn } from 'child_process'
 
-import { getRootPath } from './editor';
+import { getRootPath } from './editor'
 
 export const execShell = (command: string, args: string[]) =>
-  new Promise<string>((resolve, reject) => {
-    const ls = spawn(command, args, {
+  new Promise<string>(resolve => {
+    const task = spawn(command, args, {
       cwd: getRootPath()?.fsPath,
+      env: process.env,
+      shell: true,
+      stdio: 'inherit',
     })
-    let result = ''
-    let error = ''
-    ls.stdout.on('data', data => {
-      result += data
-    })
-
-    ls.stderr.on('data', data => {
-      error += data
-    })
-
-    ls.on('close', () => {
-      if (result) {
-        resolve(result)
-      }
-      if (error) {
-        reject(error)
-      }
-    })
+    task.on('close', resolve)
   })

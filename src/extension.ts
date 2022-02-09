@@ -185,14 +185,18 @@ export function activate(context: vscode.ExtensionContext) {
     }),
     statusBar,
     vscode.commands.registerCommand(COM_GIT_PUSH_CHORE, async () => {
-      await execShell('git', ['add', '.'])
       const value = await vscode.window.showInputBox({
         placeHolder: localize('saber2pr.git.push.placeholder'),
         value: 'chore: update',
         prompt: localize('saber2pr.git.push.title'),
       })
+      await execShell('git', ['add', '.'])
       if (value) {
-        await execShell('git', ['commit', '.', '-m', value])
+        if (/["']/.test(value)) {
+          vscode.window.showErrorMessage('commit message not include "\' ')
+          return
+        }
+        await execShell('git', ['commit', '.', '-m', `"${value}"`])
         vscode.commands.executeCommand('git.push')
       }
     })
