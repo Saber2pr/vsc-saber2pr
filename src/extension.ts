@@ -7,6 +7,7 @@ import { init, localize } from 'vscode-nls-i18n'
 import {
   COM_CHANGE_LOCALE,
   COM_CHANGE_THEME,
+  COM_GIT_PUSH_CHORE,
   COM_OPEN_FILE_WINDOW,
   COM_OPEN_IFrame,
   COM_OPEN_REPO,
@@ -35,10 +36,21 @@ axios.defaults.transformResponse = [
 ]
 
 let webviewPanel: vscode.WebviewPanel
+let statusBar: vscode.StatusBarItem = null
 
 // install
 export function activate(context: vscode.ExtensionContext) {
   init(context.extensionPath)
+
+  // statusBar init
+  statusBar = vscode.window.createStatusBarItem(
+    vscode.StatusBarAlignment.Left,
+    101
+  )
+  statusBar.text = '$(arrow-up)'
+  statusBar.tooltip = 'chore push'
+  statusBar.command = COM_GIT_PUSH_CHORE
+  statusBar.show()
 
   // webview init
   function activeIFrameWebview(title: string, src: string, reload = false) {
@@ -170,14 +182,24 @@ export function activate(context: vscode.ExtensionContext) {
           }
         }
       )
+    }),
+    statusBar,
+    vscode.commands.registerCommand(COM_GIT_PUSH_CHORE, async () => {
+      await execShell('git', ['commit', '.', '-m', 'chore: update'])
+      vscode.commands.executeCommand('git.push')
     })
   )
 }
 
 // uninstall
 export function deactivate() {
+  if (statusBar) {
+    statusBar.hide()
+    statusBar.dispose()
+  }
   if (webviewPanel) {
     webviewPanel.dispose()
   }
+  statusBar = null
   webviewPanel = null
 }
