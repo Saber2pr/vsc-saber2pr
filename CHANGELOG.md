@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.18](https://github.com/Saber2pr/saber2pr/compare/v0.0.17...v0.0.18) (2022-02-09)
+
+
+### Bug Fixes
+
+* execShell ([ef78a2d](https://github.com/Saber2pr/saber2pr/commit/ef78a2d96d19c4b238c9206b4cc7fabc6c9b944b))
+
 ### [0.0.17](https://github.com/Saber2pr/saber2pr/compare/v0.0.16...v0.0.17) (2022-02-09)
 
 
