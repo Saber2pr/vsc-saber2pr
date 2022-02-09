@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.15](https://github.com/Saber2pr/saber2pr/compare/v0.0.14...v0.0.15) (2022-02-09)
+
+
+### Features
+
+* push with input ([94befd9](https://github.com/Saber2pr/saber2pr/commit/94befd95d76f12b5a8d697101215bcae9ed57005))
+
 ### [0.0.14](https://github.com/Saber2pr/saber2pr/compare/v0.0.13...v0.0.14) (2022-02-09)
 
 
