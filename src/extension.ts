@@ -201,7 +201,7 @@ export function activate(context: vscode.ExtensionContext) {
           ['commit', '.', '--no-verify', '-i', '-m', `"${value}"`],
           'inherit'
         )
-        vscode.commands.executeCommand('git.push')
+        vscode.commands.executeCommand('git.pushWithTags')
       }
     })
   )
