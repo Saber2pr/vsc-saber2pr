@@ -48,7 +48,7 @@ export function activate(context: vscode.ExtensionContext) {
     101
   )
   statusBar.text = '$(arrow-up)'
-  statusBar.tooltip = 'chore push'
+  statusBar.tooltip = 'quick push'
   statusBar.command = COM_GIT_PUSH_CHORE
   statusBar.show()
 
@@ -196,7 +196,11 @@ export function activate(context: vscode.ExtensionContext) {
           vscode.window.showErrorMessage('commit message not include "\' ')
           return
         }
-        await execShell('git', ['commit', '.', '-m', `"${value}"`], 'inherit')
+        await execShell(
+          'git',
+          ['commit', '.', '--no-verify', '-i', '-m', `"${value}"`],
+          'inherit'
+        )
         vscode.commands.executeCommand('git.push')
       }
     })
