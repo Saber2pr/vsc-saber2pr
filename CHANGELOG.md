@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.20](https://github.com/Saber2pr/saber2pr/compare/v0.0.19...v0.0.20) (2022-02-10)
+
+
+### Features
+
+* commit ([60e888e](https://github.com/Saber2pr/saber2pr/commit/60e888eff12f6150e04376533b2ef68764e34418))
+
 ### [0.0.19](https://github.com/Saber2pr/saber2pr/compare/v0.0.18...v0.0.19) (2022-02-09)
 
 
