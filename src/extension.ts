@@ -1,12 +1,13 @@
-import { appendParams, isActiveThemeKind } from './webview/utils'
-import { createIFrameWebviewContent } from './webview/createIFrameWebviewContent'
 import axios from 'axios'
+import json from 'json5'
+import { join } from 'path'
 import * as vscode from 'vscode'
 import { init, localize } from 'vscode-nls-i18n'
 
 import {
   COM_CHANGE_LOCALE,
   COM_CHANGE_THEME,
+  COM_GIT_PULL,
   COM_GIT_PUSH_CHORE,
   COM_OPEN_FILE_WINDOW,
   COM_OPEN_IFrame,
@@ -22,12 +23,14 @@ import {
 import { handleMessage } from './handleMessage'
 import { COMMANDS } from './utils/commands'
 import { execShell } from './utils/execShell'
-import { getRemoteOrigin } from './utils/git'
+import { getArray } from './utils/getArray'
+import { getCurrentBranch, getRemoteOrigin } from './utils/git'
 import { openUrl } from './utils/openUrl'
+import { runScript } from './utils/runner'
+import { createIFrameWebviewContent } from './webview/createIFrameWebviewContent'
 import { createListWebviewContent } from './webview/createListWebviewContent'
 import { createLoadingWebviewContent } from './webview/createLoadingWebviewContent'
-import { join } from 'path'
-import json from 'json5'
+import { appendParams, isActiveThemeKind } from './webview/utils'
 
 axios.defaults.transformResponse = [
   text => {
@@ -36,21 +39,32 @@ axios.defaults.transformResponse = [
 ]
 
 let webviewPanel: vscode.WebviewPanel
-let statusBar: vscode.StatusBarItem = null
+let gitPushStatusBar: vscode.StatusBarItem = null
+let gitPullStatusBar: vscode.StatusBarItem = null
 
 // install
 export function activate(context: vscode.ExtensionContext) {
   init(context.extensionPath)
 
-  // statusBar init
-  statusBar = vscode.window.createStatusBarItem(
+  // gitPullStatusBar init
+  gitPushStatusBar = vscode.window.createStatusBarItem(
     vscode.StatusBarAlignment.Left,
     101
   )
-  statusBar.text = '$(arrow-up)'
-  statusBar.tooltip = 'quick push'
-  statusBar.command = COM_GIT_PUSH_CHORE
-  statusBar.show()
+  gitPushStatusBar.text = '$(arrow-up)'
+  gitPushStatusBar.tooltip = 'quick push'
+  gitPushStatusBar.command = COM_GIT_PUSH_CHORE
+  gitPushStatusBar.show()
+
+  // gitPullStatusBar init
+  gitPullStatusBar = vscode.window.createStatusBarItem(
+    vscode.StatusBarAlignment.Left,
+    102
+  )
+  gitPullStatusBar.text = '$(arrow-down)'
+  gitPullStatusBar.tooltip = 'quick pull'
+  gitPullStatusBar.command = COM_GIT_PULL
+  gitPullStatusBar.show()
 
   // webview init
   function activeIFrameWebview(title: string, src: string, reload = false) {
@@ -183,7 +197,8 @@ export function activate(context: vscode.ExtensionContext) {
         }
       )
     }),
-    statusBar,
+    gitPushStatusBar,
+    gitPullStatusBar,
     vscode.commands.registerCommand(COM_GIT_PUSH_CHORE, async () => {
       const value = await vscode.window.showInputBox({
         placeHolder: localize('saber2pr.git.push.placeholder'),
@@ -203,19 +218,25 @@ export function activate(context: vscode.ExtensionContext) {
         )
         vscode.commands.executeCommand('git.pushWithTags')
       }
+    }),
+    vscode.commands.registerCommand(COM_GIT_PULL, async () => {
+      const branch = await getCurrentBranch()
+      if (branch) {
+        runScript('git-pull', 'git', ['pull', 'origin', branch], 'cli')
+      }
     })
   )
 }
 
 // uninstall
 export function deactivate() {
-  if (statusBar) {
-    statusBar.hide()
-    statusBar.dispose()
+  if (gitPushStatusBar) {
+    gitPushStatusBar.hide()
+    gitPushStatusBar.dispose()
   }
   if (webviewPanel) {
     webviewPanel.dispose()
   }
-  statusBar = null
+  gitPushStatusBar = null
   webviewPanel = null
 }
