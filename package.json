@@ -116,6 +116,7 @@
 		"gruntfuggly.todo-tree",
 		"connor.translatex",
 		"mikey.vscode-fileheader",
-		"piotrpalarz.vscode-gitignore-generator"
+		"piotrpalarz.vscode-gitignore-generator",
+		"saber2pr.file-git-history"
 	]
 }
