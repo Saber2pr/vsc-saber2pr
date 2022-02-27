@@ -1,6 +1,6 @@
 # Saber2pr Tools
 
-<img height="64px" src="https://cdn.jsdelivr.net/gh/saber2pr/MyWeb@master/resource/image/vsc-scripts-manager.png" />
+<img height="64px" src="https://cdn.jsdelivr.net/gh/saber2pr/MyWeb@master/resource/image/vsc-saber2pr-logo.png" />
 
 ---
 
