@@ -108,6 +108,7 @@
 		"saber2pr.import-transform",
 		"saber2pr.ts-ast-viewer",
 		"saber2pr.createdirindex",
+		"saber2pr.file-git-history",
 		"ms-ceintl.vscode-language-pack-zh-hans",
 		"mhutchie.git-graph",
 		"humao.rest-client",
@@ -116,7 +117,6 @@
 		"gruntfuggly.todo-tree",
 		"connor.translatex",
 		"mikey.vscode-fileheader",
-		"piotrpalarz.vscode-gitignore-generator",
-		"saber2pr.file-git-history"
+		"piotrpalarz.vscode-gitignore-generator"
 	]
 }
