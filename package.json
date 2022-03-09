@@ -87,6 +87,7 @@
 		"@types/git-url-parse": "^9.0.1",
 		"@types/node": "^12.11.7",
 		"@types/vscode": "^1.56.0",
+		"react": "^17.0.2",
 		"standard-version": "^9.3.2",
 		"typescript": "^4.1.3"
 	},
