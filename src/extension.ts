@@ -213,7 +213,7 @@ export function activate(context: vscode.ExtensionContext) {
         }
         await execShell(
           'git',
-          ['commit', '.', '--no-verify', '-i', '-m', `"${value}"`],
+          ['commit', '.', '-i', '-m', `"${value}"`],
           'inherit'
         )
         vscode.commands.executeCommand('git.pushWithTags')
