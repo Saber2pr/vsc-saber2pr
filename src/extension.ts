@@ -9,6 +9,7 @@ import {
   COM_CHANGE_THEME,
   COM_GIT_PULL,
   COM_GIT_PUSH_CHORE,
+  COM_OPEN_EXTLIST_CONFIG,
   COM_OPEN_FILE_WINDOW,
   COM_OPEN_IFrame,
   COM_OPEN_REPO,
@@ -153,6 +154,9 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand(COM_OPEN_REPO, async () => {
       const remote = await getRemoteOrigin()
       await openUrl(remote)
+    }),
+    vscode.commands.registerCommand(COM_OPEN_EXTLIST_CONFIG, async () => {
+      await openUrl(`https://github.com/Saber2pr/saber2pr.github.io/blob/master/static/data/vsc-saber2pr-extensions.json`)
     }),
     vscode.commands.registerCommand(COM_OPEN_TERMINAL, () => {
       vscode.commands.executeCommand(COMMANDS.openTerminal)

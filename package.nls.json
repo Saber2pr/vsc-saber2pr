@@ -4,7 +4,7 @@
   "saber2pr.title.system": "system",
   "saber2pr.menu": "[Open Git Repo](command:saber2pr.open.repo)\n[Open Recent](command:workbench.action.quickOpenRecent)\n[Open Terminal](command:saber2pr.open.terminal)\n[Gitignore Generate](command:extension.gitignoreGenerate)",
   "saber2pr.menu.extensions": "[My Blog](command:saber2pr.open.url.saber2pr-blog)\n[Script Manage](command:vsc-scripts-manager.main)\n[Todo Manage](command:todolist.main)",
-  "saber2pr.menu.system": "[Change Theme](command:saber2pr.change.theme)\n[Change Locale](command:saber2pr.change.locale)\n[Reload](command:saber2pr.reload)\n[Update Extension Config](command:saber2pr.update.uri.extension)\n[Publish Extension](command:saber2pr.open.vsc-marketplace)",
+  "saber2pr.menu.system": "[Change Theme](command:saber2pr.change.theme)\n[Change Locale](command:saber2pr.change.locale)\n[Reload](command:saber2pr.reload)\n[Add Extension Config](command:saber2pr.open.extlist.config)\n[Update Extension Config](command:saber2pr.update.uri.extension)\n[Publish Extension](command:saber2pr.open.vsc-marketplace)",
   "saber2pr.error.need.http": "The protocol must be HTTP",
   "saber2pr.title.open.file.window": "Open path in new window",
   "saber2pr.git.push.placeholder": "input commit message",
