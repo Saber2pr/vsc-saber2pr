@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.29](https://github.com/Saber2pr/saber2pr/compare/v0.0.28...v0.0.29) (2022-04-13)
+
+
+### Bug Fixes
+
+* retainContextWhenHidden ([281de99](https://github.com/Saber2pr/saber2pr/commit/281de9910e341c00bd2c60afd127c48b13f887fc))
+
 ### [0.0.28](https://github.com/Saber2pr/saber2pr/compare/v0.0.27...v0.0.28) (2022-03-16)
 
 ### [0.0.27](https://github.com/Saber2pr/saber2pr/compare/v0.0.26...v0.0.27) (2022-03-09)
