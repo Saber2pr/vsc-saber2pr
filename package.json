@@ -118,6 +118,7 @@
 		"gruntfuggly.todo-tree",
 		"connor.translatex",
 		"mikey.vscode-fileheader",
-		"piotrpalarz.vscode-gitignore-generator"
+		"piotrpalarz.vscode-gitignore-generator",
+		"leetcode.vscode-leetcode"
 	]
 }
