@@ -109,6 +109,7 @@
 		"saber2pr.import-transform",
 		"saber2pr.ts-ast-viewer",
 		"saber2pr.createdirindex",
+		"saber2pr.file-git-history",
 		"ms-ceintl.vscode-language-pack-zh-hans",
 		"mhutchie.git-graph",
 		"maattdd.gitless",
@@ -119,6 +120,9 @@
 		"connor.translatex",
 		"mikey.vscode-fileheader",
 		"piotrpalarz.vscode-gitignore-generator",
-		"leetcode.vscode-leetcode"
+		"leetcode.vscode-leetcode",
+		"tabnine.tabnine-vscode",
+		"chakrounanas.turbo-console-log",
+		"esbenp.prettier-vscode"
 	]
 }
