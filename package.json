@@ -121,8 +121,10 @@
 		"mikey.vscode-fileheader",
 		"piotrpalarz.vscode-gitignore-generator",
 		"leetcode.vscode-leetcode",
-		"tabnine.tabnine-vscode",
 		"chakrounanas.turbo-console-log",
-		"esbenp.prettier-vscode"
+		"esbenp.prettier-vscode",
+		"naumovs.color-highlight",
+		"christian-kohler.path-intellisense",
+		"jakearl.search-editor-apply-changes"
 	]
 }
