@@ -4,8 +4,6 @@
 
 ---
 
-[![Version for VS Code Extension](https://vsmarketplacebadge.apphb.com/version-short/saber2pr.vsc-saber2pr.svg?logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=saber2pr.vsc-saber2pr) [![Installs](https://vsmarketplacebadge.apphb.com/installs/saber2pr.vsc-saber2pr.svg)](https://marketplace.visualstudio.com/items?itemName=saber2pr.vsc-saber2pr) [![Rating](https://vsmarketplacebadge.apphb.com/rating/saber2pr.vsc-saber2pr.svg)](https://marketplace.visualstudio.com/items?itemName=saber2pr.vsc-saber2pr)
-
 saber2pr utils tools.
 
 ## Overview
