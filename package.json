@@ -125,6 +125,7 @@
 		"esbenp.prettier-vscode",
 		"naumovs.color-highlight",
 		"christian-kohler.path-intellisense",
-		"jakearl.search-editor-apply-changes"
+		"jakearl.search-editor-apply-changes",
+		"funkyremi.vscode-google-translate"
 	]
 }
