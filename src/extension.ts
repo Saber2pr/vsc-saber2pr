@@ -17,9 +17,8 @@ import {
   COM_OPEN_URL_BLOG,
   COM_OPEN_VSC_MARKETPLACE,
   COM_RELOAD,
-  COM_UPDATE_URI_EXTENSION,
+  Plugins,
   listUri,
-  refreshExtensionUri,
 } from './constants'
 import { handleMessage } from './handleMessage'
 import { COMMANDS } from './utils/commands'
@@ -123,20 +122,11 @@ export function activate(context: vscode.ExtensionContext) {
           enableScripts: true,
         }
 
-        // loading
-        webview.webview.html = createLoadingWebviewContent(
+        webview.webview.html = createListWebviewContent(
           webview.webview,
-          context.extensionUri
+          context.extensionUri,
+          Plugins
         )
-        // render data
-        axios.get(`${listUri}?t=${Date.now()}`).then(res => {
-          console.log('Extension Config', res.data)
-          webview.webview.html = createListWebviewContent(
-            webview.webview,
-            context.extensionUri,
-            res.data
-          )
-        })
 
         webview.webview.onDidReceiveMessage(
           handleMessage,
@@ -156,7 +146,9 @@ export function activate(context: vscode.ExtensionContext) {
       await openUrl(remote)
     }),
     vscode.commands.registerCommand(COM_OPEN_EXTLIST_CONFIG, async () => {
-      await openUrl(`https://github.com/Saber2pr/saber2pr.github.io/blob/master/static/data/vsc-saber2pr-extensions.json`)
+      await openUrl(
+        `https://github.com/Saber2pr/saber2pr.github.io/blob/master/static/data/vsc-saber2pr-extensions.json`
+      )
     }),
     vscode.commands.registerCommand(COM_OPEN_TERMINAL, () => {
       vscode.commands.executeCommand(COMMANDS.openTerminal)
@@ -176,30 +168,11 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand(COM_OPEN_URL_BLOG, () => {
       vscode.commands.executeCommand(
         'simpleBrowser.show',
-        'https://saber2pr.top/?plain-menu-blog#/blog/%E6%B0%B8%E6%81%92%E3%81%AE%E5%B9%BB%E6%83%B3%E4%B9%A1'
+        'https://saber2pr.top/'
       )
     }),
     vscode.commands.registerCommand(COM_OPEN_FILE_WINDOW, (uri: vscode.Uri) => {
       execShell('code', ['-n', uri.fsPath])
-    }),
-    vscode.commands.registerCommand(COM_UPDATE_URI_EXTENSION, async () => {
-      vscode.window.withProgress(
-        {
-          location: vscode.ProgressLocation.Notification,
-          title: 'Update Extension Config',
-        },
-        async progress => {
-          try {
-            progress.report({ increment: 0 })
-            const res = await axios.get(refreshExtensionUri)
-            console.log(res.data)
-            vscode.window.showInformationMessage('Update Success')
-            progress.report({ increment: 100 })
-          } catch (error) {
-            vscode.window.showErrorMessage('Update Fail')
-          }
-        }
-      )
     }),
     gitPushStatusBar,
     gitPullStatusBar,

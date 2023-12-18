@@ -6,8 +6,8 @@ import { createWebviewContent } from './createWebviewContent'
 export type List = Array<{
   'zh-cn': string
   en: string
-  href: string
-  command: string
+  href?: string
+  command?: string
 }>
 
 const getLang = () =>
