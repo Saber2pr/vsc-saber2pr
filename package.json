@@ -107,7 +107,8 @@
 		"@types/vscode": "^1.56.0",
 		"react": "^17.0.2",
 		"standard-version": "^9.3.2",
-		"typescript": "^4.1.3"
+		"typescript": "^4.1.3",
+		"vsce": "^2.15.0"
 	},
 	"dependencies": {
 		"@vscode/webview-ui-toolkit": "^0.9.0",
@@ -139,7 +140,6 @@
 		"mikey.vscode-fileheader",
 		"piotrpalarz.vscode-gitignore-generator",
 		"leetcode.vscode-leetcode",
-		"chakrounanas.turbo-console-log",
 		"esbenp.prettier-vscode",
 		"naumovs.color-highlight",
 		"christian-kohler.path-intellisense",
