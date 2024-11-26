@@ -25,6 +25,10 @@
 			{
 				"command": "saber2pr.open.file.window",
 				"title": "%saber2pr.title.open.file.window%"
+			},
+			{
+				"command": "saber2pr.log.line",
+				"title": "Quick Console"
 			}
 		],
 		"menus": {
@@ -32,6 +36,13 @@
 				{
 					"command": "saber2pr.open.file.window",
 					"group": "1_modification"
+				}
+			],
+			"editor/context": [
+				{
+					"command": "saber2pr.log.line",
+					"when": "editorHasSelection",
+					"group": "navigation"
 				}
 			]
 		},
@@ -73,6 +84,13 @@
 			{
 				"view": "system",
 				"contents": "%saber2pr.menu.system%"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "saber2pr.log.line",
+				"key": "ctrl+alt+l",
+				"mac": "ctrl+alt+l"
 			}
 		]
 	},

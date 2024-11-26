@@ -9,6 +9,7 @@ import {
   COM_CHANGE_THEME,
   COM_GIT_PULL,
   COM_GIT_PUSH_CHORE,
+  COM_LOG_LINE,
   COM_OPEN_EXTLIST_CONFIG,
   COM_OPEN_FILE_WINDOW,
   COM_OPEN_IFrame,
@@ -31,6 +32,7 @@ import { createIFrameWebviewContent } from './webview/createIFrameWebviewContent
 import { createListWebviewContent } from './webview/createListWebviewContent'
 import { createLoadingWebviewContent } from './webview/createLoadingWebviewContent'
 import { appendParams, isActiveThemeKind } from './webview/utils'
+import { logLine } from './core/logLine'
 
 axios.defaults.transformResponse = [
   text => {
@@ -162,6 +164,7 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand(COM_RELOAD, () => {
       vscode.commands.executeCommand(COMMANDS.reload)
     }),
+    vscode.commands.registerCommand(COM_LOG_LINE, logLine),
     vscode.commands.registerCommand(COM_OPEN_VSC_MARKETPLACE, () => {
       openUrl('https://marketplace.visualstudio.com/manage/')
     }),

@@ -9,6 +9,7 @@ export const COM_OPEN_FILE_WINDOW = 'saber2pr.open.file.window'
 export const COM_OPEN_IFrame = 'saber2pr.open.iframe'
 export const COM_GIT_PUSH_CHORE = 'saber2pr.git.push.chore'
 export const COM_GIT_PULL = 'saber2pr.git.pull'
+export const COM_LOG_LINE = 'saber2pr.log.line'
 
 // open url
 export const COM_OPEN_URL_BLOG = 'saber2pr.open.url.saber2pr-blog'
