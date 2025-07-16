@@ -145,6 +145,7 @@
 		"christian-kohler.path-intellisense",
 		"jakearl.search-editor-apply-changes",
 		"funkyremi.vscode-google-translate",
-		"pomdtr.excalidraw-editor"
+		"pomdtr.excalidraw-editor",
+		"analytic-signal.preview-pdf"
 	]
 }
