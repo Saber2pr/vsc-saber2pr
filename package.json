@@ -15,6 +15,7 @@
 		"type": "git",
 		"url": "https://github.com/Saber2pr/saber2pr.git"
 	},
+	"license": "MIT",
 	"icon": "assets/logo.png",
 	"activationEvents": [
 		"*"
